@@ -15796,7 +15796,7 @@ building block for creating still more complex circuits.  (For example, see
 @example
     +----------------------------------+
     |              +-------+           |
-A -----------------+ full  +-------------- SUM
+A -----------------+ half  +-------------- SUM
     |  +-------+   | adder |   ____    |
 B -----+ half  +---+       +---\   \   |
     |  | adder |   +-------+    >or >----- Cout
