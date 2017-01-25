@@ -650,7 +650,7 @@ the register-machine simulator but we do not cover its implementation (section
 wish to cover only the first three or four chapters, leaving the other material
 for subsequent courses.
 
-The World-Wide-Web site @url{http://www-mitpress.mit.edu/sicp/} provides
+The World-Wide-Web site @url{http://mitpress.mit.edu/sicp/} provides
 support for users of this book.  This includes programs from the book, sample
 programming assignments, supplementary materials, and downloadable
 implementations of the Scheme dialect of Lisp.
