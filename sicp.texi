@@ -9118,9 +9118,9 @@ differentiator to handle more kinds of expressions.  For instance, implement
 the differentiation rule
 
 @example
-n_1   n_2
---- = ---  if and only if n_1 d_2 = n_2 d_1
-d_1   d_2
+d(u^n)             / du \
+------ = n u^(n-1) | -- |
+  dx               \ dx /
 @end example
 
 @noindent
