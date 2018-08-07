@@ -41,7 +41,7 @@
 
 ;; If you want to recreate the info file, you can do so using
 ;;
-;;   makeinfo –no-split sicp.texi -o sicp.info
+;;   makeinfo -–no-split sicp.texi -o sicp.info
 
 ;;; Code:
 
