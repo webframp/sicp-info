@@ -4884,7 +4884,7 @@ number @i{x} is given (in the limit of small @i{d}@i{x}) by
 
 @example
         g(x + dx) - g(x)
-Dg(c) = ----------------
+Dg(x) = ----------------
                dx
 @end example
 
@@ -5640,7 +5640,7 @@ rational-number package.
         +------------------------------------+
 --------| Programs that use rational numbers |--------
         +------------------------------------+
-          Rational numbers in promblem domain
+          Rational numbers in problem domain
             +---------------------------+
 ------------|   add-rat  sub-rat  ...   |-------------
             +---------------------------+
@@ -7465,7 +7465,7 @@ at a given value of @i{x} can be formulated as an accumulation.  We evaluate
 the polynomial
 
 @example
-a_n r^n | a_(n-1) r^(n-1) + ... + a_1 r + a_0
+a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 @end example
 
 @noindent
@@ -7473,7 +7473,7 @@ using a well-known algorithm called @newterm{Horner's rule}, which structures
 the computation as
 
 @example
-(... (a_n r + a_(n-1)) r + ... + a_1) r + a_0
+(... (a_n x + a_(n-1)) x + ... + a_1) x + a_0
 @end example
 
 @noindent
@@ -8268,7 +8268,7 @@ the unit square into the frame by mapping the vector @i{v} = (@i{x},@i{y}) to
 the vector sum
 
 @example
-Origin(Frame) + r * Edge_1(Frame) + y * Edge_2(Frame)
+Origin(Frame) + x * Edge_1(Frame) + y * Edge_2(Frame)
 @end example
 
 @noindent
