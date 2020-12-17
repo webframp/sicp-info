@@ -13573,6 +13573,9 @@ is said to be @newterm{unbound} in the environment.
 | z: 6    +---+  +---+ m: 1     |
 | x: 7    |          | y: 2     |
 +---------+          +----------+
+     ^                    ^
+     |                    |
+     A                    B
 @end example
 @end quotation
 
