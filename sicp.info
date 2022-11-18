@@ -2643,7 +2643,7 @@ Another common pattern of computation is called "tree recursion".  As
 an example, consider computing the sequence of Fibonacci numbers, in
 which each number is the sum of the preceding two:
 
-   0, 1, 1, 2, 3, 4, 8, 13, 21, ...
+   0, 1, 1, 2, 3, 5, 8, 13, 21, ...
 
    In general, the Fibonacci numbers can be defined by the rule
 
