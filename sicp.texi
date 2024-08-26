@@ -13573,6 +13573,9 @@ is said to be @newterm{unbound} in the environment.
 | z: 6    +---+  +---+ m: 1     |
 | x: 7    |          | y: 2     |
 +---------+          +----------+
+     ^                    ^
+     |                    |
+     A                    B
 @end example
 @end quotation
 
@@ -13627,7 +13630,7 @@ To evaluate a combination:
 @enumerate 1
 
 @item
-Evaluate the subexpressions of the combination.@footnote{ssignment introduces a
+Evaluate the subexpressions of the combination.@footnote{Assignment introduces a
 subtlety into step 1 of the evaluation rule.  As shown in @ref{Exercise 3-8},
 the presence of assignment allows us to write expressions that will produce
 different values depending on the order in which the subexpressions in a

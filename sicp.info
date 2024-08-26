@@ -4562,7 +4562,7 @@ then the derivative Dg of g is the function whose value at any number x
 is given (in the limit of small dx) by
 
              g(x + dx) - g(x)
-     Dg(c) = ----------------
+     Dg(x) = ----------------
                     dx
 
 Thus, we can express the idea of derivative (taking dx to be, say,
@@ -5303,7 +5303,7 @@ different levels.
                   +------------------------------------+
           --------| Programs that use rational numbers |--------
                   +------------------------------------+
-                    Rational numbers in promblem domain
+                    Rational numbers in problem domain
                       +---------------------------+
           ------------|   add-rat  sub-rat  ...   |-------------
                       +---------------------------+
@@ -6887,12 +6887,12 @@ paradigm to admit infinite sequences.
      *Exercise 2.34:* Evaluating a polynomial in x at a given value of
      x can be formulated as an accumulation.  We evaluate the polynomial
 
-          a_n r^n | a_(n-1) r^(n-1) + ... + a_1 r + a_0
+          a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 
      using a well-known algorithm called "Horner's rule", which
      structures the computation as
 
-          (... (a_n r + a_(n-1)) r + ... + a_1) r + a_0
+          (... (a_n x + a_(n-1)) x + ... + a_1) x + a_0
 
      In other words, we start with a_n, multiply by x, add a_(n-1),
      multiply by x, and so on, until we reach a_0.(3)
@@ -7550,7 +7550,7 @@ will be used to shift and scale images to fit the frame.  The map
 transforms the unit square into the frame by mapping the vector v =
 (x,y) to the vector sum
 
-     Origin(Frame) + r * Edge_1(Frame) + y * Edge_2(Frame)
+     Origin(Frame) + x * Edge_1(Frame) + y * Edge_2(Frame)
 
 For example, (0,0) is mapped to the origin of the frame, (1,1) to the
 vertex diagonally opposite the origin, and (0.5,0.5) to the center of
@@ -8382,9 +8382,9 @@ form that may be simplest for one purpose may not be for another.
      handle more kinds of expressions.  For instance, implement the
      differentiation rule
 
-          n_1   n_2
-          --- = ---  if and only if n_1 d_2 = n_2 d_1
-          d_1   d_2
+          d(u^n)             / du \
+          ------ = n u^(n-1) | -- |
+            dx               \ dx /
 
      by adding a new clause to the `deriv' program and defining
      appropriate procedures `exponentiation?', `base', `exponent', and
@@ -12641,6 +12641,9 @@ environment.
           | z: 6    +---+  +---+ m: 1     |
           | x: 7    |          | y: 2     |
           +---------+          +----------+
+               ^                    ^
+               |                    |
+               A                    B
 
    *Note Figure 3-1:: shows a simple environment structure consisting
 of three frames, labeled I, II, and III.  In the diagram, A, B, C, and
@@ -12829,7 +12832,7 @@ the model by analyzing some illustrative programs.
 
    ---------- Footnotes ----------
 
-   (1) ssignment introduces a subtlety into step 1 of the evaluation
+   (1) Assignment introduces a subtlety into step 1 of the evaluation
 rule.  As shown in *Note Exercise 3-8::, the presence of assignment
 allows us to write expressions that will produce different values
 depending on the order in which the subexpressions in a combination are
@@ -15889,7 +15892,7 @@ restrictions on concurrent execution.
            |                                      | new value: 100-25=75 |
            |                              ____    `----------+-----------'
            |                             /    \              |
-           |                            | $ 90 |<------------'
+           |                            | $ 75 |<------------'
            V                             \____/
           time
 
@@ -32038,8 +32041,8 @@ Index
 * abstract syntax:                       4-1-1.               (line  44)
 * abstraction:                           2-1-2.               (line  16)
 * abstraction barriers:                  Chapter 2.           (line 118)
-* accumulator <1>:                       3-1-1.               (line 216)
-* accumulator:                           2-2-3.               (line  76)
+* accumulator <1>:                       2-2-3.               (line  76)
+* accumulator:                           3-1-1.               (line 216)
 * acquired:                              3-4-2.               (line 388)
 * action:                                5-1-1.               (line 164)
 * additive:                              2-4-3.               (line  26)
@@ -32380,7 +32383,7 @@ Index
 * serializer:                            3-4-2.               (line  30)
 * serializers:                           3-4-2.               (line  91)
 * series RLC circuit:                    3-5-4.               (line 161)
-* shadow:                                3-2.                 (line  62)
+* shadow:                                3-2.                 (line  65)
 * shared:                                3-3-1.               (line 248)
 * side-effect bugs:                      3-1-3.               (line 320)
 * sieve of:                              3-5-2.               (line  55)
@@ -32615,780 +32618,780 @@ Ref: 2-1-1-Footnote-2232902
 Ref: 2-1-1-Footnote-3233769
 Node: 2-1-2234092
 Ref: Figure 2-1235801
-Ref: Exercise 2-2239032
-Ref: Exercise 2-3240136
-Node: 2-1-3240633
-Ref: Exercise 2-4245489
-Ref: Exercise 2-5245961
-Ref: Exercise 2-6246262
-Ref: 2-1-3-Footnote-1247140
-Node: 2-1-4248368
-Ref: Exercise 2-7251742
-Ref: Exercise 2-8252077
-Ref: Exercise 2-9252280
-Ref: Exercise 2-10252996
-Ref: Exercise 2-11253290
-Ref: Exercise 2-12254707
-Ref: Exercise 2-13255038
-Ref: Exercise 2-14256458
-Ref: Exercise 2-15256902
-Ref: Exercise 2-16257404
-Node: 2-2257686
-Ref: Figure 2-2258461
-Ref: Figure 2-3259139
-Ref: 2-2-Footnote-1261544
-Ref: 2-2-Footnote-2262051
-Node: 2-2-1263195
-Ref: Figure 2-4263329
-Ref: Exercise 2-17269117
-Ref: Exercise 2-18269325
-Ref: Exercise 2-19269534
-Ref: Exercise 2-20271409
-Ref: Exercise 2-21275272
-Ref: Exercise 2-22275800
-Ref: Exercise 2-23276818
-Ref: 2-2-1-Footnote-1277624
-Ref: 2-2-1-Footnote-2277830
-Ref: 2-2-1-Footnote-3278324
-Ref: 2-2-1-Footnote-4279122
-Ref: 2-2-1-Footnote-5279259
-Ref: Footnote 12279279
-Node: 2-2-2279803
-Ref: Figure 2-5280428
-Ref: Figure 2-6281728
-Ref: Exercise 2-24283697
-Ref: Exercise 2-25283961
-Ref: Exercise 2-26284158
-Ref: Exercise 2-27284480
-Ref: Exercise 2-28284950
-Ref: Exercise 2-29285332
-Ref: Exercise 2-30288704
-Ref: Exercise 2-31289170
-Ref: Exercise 2-32289402
-Ref: 2-2-2-Footnote-1290053
-Node: 2-2-3290182
-Ref: Figure 2-7293341
-Ref: Exercise 2-33300870
-Ref: Exercise 2-34301287
-Ref: Exercise 2-35302315
-Ref: Exercise 2-36302502
-Ref: Exercise 2-37303409
-Ref: Exercise 2-38304996
-Ref: Exercise 2-39305968
-Ref: Exercise 2-40310779
-Ref: Exercise 2-41311017
-Ref: Figure 2-8311209
-Ref: Exercise 2-42312017
-Ref: Exercise 2-43314847
-Ref: 2-2-3-Footnote-1315774
-Ref: 2-2-3-Footnote-2315970
-Ref: 2-2-3-Footnote-3316694
-Ref: 2-2-3-Footnote-4317641
-Ref: 2-2-3-Footnote-5317734
-Ref: 2-2-3-Footnote-6318085
-Ref: 2-2-3-Footnote-7318252
-Ref: 2-2-3-Footnote-8318320
-Node: 2-2-4318587
-Ref: Figure 2-9319451
-Ref: Figure 2-10321413
-Ref: Figure 2-11321629
-Ref: Figure 2-12322127
-Ref: Figure 2-13323974
-Ref: Figure 2-14325687
-Ref: Exercise 2-44326516
-Ref: Exercise 2-45328445
-Ref: Figure 2-15329747
-Ref: Exercise 2-46331633
-Ref: Exercise 2-47332341
-Ref: Exercise 2-48334318
-Ref: Exercise 2-49334773
-Ref: Exercise 2-50339384
-Ref: Exercise 2-51339582
-Ref: Exercise 2-52343309
-Ref: 2-2-4-Footnote-1344068
-Ref: 2-2-4-Footnote-2344369
-Ref: 2-2-4-Footnote-3347076
-Ref: 2-2-4-Footnote-4347204
-Ref: 2-2-4-Footnote-5347415
-Ref: 2-2-4-Footnote-6347722
-Ref: 2-2-4-Footnote-7347909
-Ref: 2-2-4-Footnote-8348718
-Ref: 2-2-4-Footnote-9348859
-Ref: 2-2-4-Footnote-10349015
-Node: 2-3349075
-Node: 2-3-1349615
-Ref: Exercise 2-53352845
-Ref: Exercise 2-54353239
-Ref: Exercise 2-55353912
-Ref: 2-3-1-Footnote-1354123
-Ref: 2-3-1-Footnote-2355077
-Ref: 2-3-1-Footnote-3355397
-Ref: 2-3-1-Footnote-4356300
-Ref: 2-3-1-Footnote-5356611
-Node: 2-3-2357090
-Ref: Exercise 2-56366282
-Ref: Exercise 2-57366894
-Ref: Exercise 2-58367388
-Node: 2-3-3368621
-Ref: Exercise 2-59372758
-Ref: Exercise 2-60372869
-Ref: Exercise 2-61377483
-Ref: Exercise 2-62377792
-Ref: Figure 2-16378668
-Ref: Figure 2-17383184
-Ref: Exercise 2-63383461
-Ref: Exercise 2-64384666
-Ref: Exercise 2-65386447
-Ref: Exercise 2-66389408
-Ref: 2-3-3-Footnote-1389619
-Ref: 2-3-3-Footnote-2390362
-Ref: 2-3-3-Footnote-3390611
-Ref: 2-3-3-Footnote-4390986
-Ref: 2-3-3-Footnote-5391177
-Node: 2-3-4391264
-Ref: Figure 2-18394846
-Ref: Exercise 2-67404897
-Ref: Exercise 2-68405406
-Ref: Exercise 2-69406219
-Ref: Exercise 2-70407200
-Ref: Exercise 2-71408132
-Ref: Exercise 2-72408470
-Ref: 2-3-4-Footnote-1409141
-Node: 2-4409232
-Ref: Figure 2-19413883
-Node: 2-4-1415135
-Ref: Figure 2-20416917
-Ref: 2-4-1-Footnote-1422407
-Ref: 2-4-1-Footnote-2422837
-Node: 2-4-2423084
-Ref: Figure 2-21429781
-Node: 2-4-3432113
-Ref: Figure 2-22436024
-Ref: Exercise 2-73442131
-Ref: Exercise 2-74444642
-Ref: Exercise 2-75449905
-Ref: Exercise 2-76450098
-Ref: 2-4-3-Footnote-1450711
-Ref: 2-4-3-Footnote-2450882
-Ref: 2-4-3-Footnote-3451033
-Ref: 2-4-3-Footnote-4451594
-Node: 2-5451693
-Ref: Figure 2-23453629
-Node: 2-5-1454784
-Ref: Figure 2-24462133
-Ref: Exercise 2-77462972
-Ref: Exercise 2-78464110
-Ref: Exercise 2-79465056
-Ref: Exercise 2-80465316
-Node: 2-5-2465559
-Ref: Figure 2-25474465
-Ref: Figure 2-26477175
-Ref: Exercise 2-81479477
-Ref: Exercise 2-82481274
-Ref: Exercise 2-83481831
-Ref: Exercise 2-84482238
-Ref: Exercise 2-85482721
-Ref: Exercise 2-86484213
-Ref: 2-5-2-Footnote-1484702
-Ref: 2-5-2-Footnote-2484810
-Ref: 2-5-2-Footnote-3484865
-Ref: 2-5-2-Footnote-4485497
-Ref: 2-5-2-Footnote-5486767
-Node: 2-5-3486900
-Ref: Exercise 2-87501069
-Ref: Exercise 2-88501276
-Ref: Exercise 2-89501450
-Ref: Exercise 2-90501599
-Ref: Exercise 2-91502211
-Ref: Exercise 2-92507097
-Ref: Exercise 2-93508218
-Ref: Exercise 2-94509819
-Ref: Exercise 2-95510533
-Ref: Exercise 2-96512557
-Ref: Exercise 2-97514593
-Ref: 2-5-3-Footnote-1517208
-Ref: 2-5-3-Footnote-2517485
-Ref: 2-5-3-Footnote-3518048
-Ref: 2-5-3-Footnote-4518377
-Ref: 2-5-3-Footnote-5518781
-Ref: 2-5-3-Footnote-6519101
-Ref: 2-5-3-Footnote-7519639
-Ref: 2-5-3-Footnote-8520441
-Ref: 2-5-3-Footnote-9520731
-Node: Chapter 3521067
-Node: 3-1524664
-Node: 3-1-1527051
-Ref: Exercise 3-1535441
-Ref: Exercise 3-2535989
-Ref: Exercise 3-3536986
-Ref: Exercise 3-4537575
-Ref: 3-1-1-Footnote-1537880
-Ref: 3-1-1-Footnote-2538295
-Ref: 3-1-1-Footnote-3538764
-Ref: 3-1-1-Footnote-4539037
-Ref: 3-1-1-Footnote-5539458
-Node: 3-1-2539753
-Ref: Exercise 3-5546537
-Ref: Exercise 3-6548796
-Ref: 3-1-2-Footnote-1549449
-Ref: 3-1-2-Footnote-2550475
-Ref: 3-1-2-Footnote-3550581
-Node: 3-1-3550810
-Ref: Exercise 3-7561953
-Ref: Exercise 3-8563026
-Ref: 3-1-3-Footnote-1563743
-Ref: 3-1-3-Footnote-2563969
-Ref: 3-1-3-Footnote-3564782
-Node: 3-2565442
-Ref: Figure 3-1567103
-Node: 3-2-1569751
-Ref: Figure 3-2571818
-Ref: Figure 3-3573821
-Ref: 3-2-1-Footnote-1576625
-Ref: 3-2-1-Footnote-2577302
-Node: 3-2-2577716
-Ref: Figure 3-4578518
-Ref: Figure 3-5579977
-Ref: Exercise 3-9583109
-Ref: 3-2-2-Footnote-1583893
-Node: 3-2-3584207
-Ref: Figure 3-6585276
-Ref: Figure 3-7587015
-Ref: Figure 3-8589212
-Ref: Figure 3-9591388
-Ref: Figure 3-10593188
-Ref: Exercise 3-10594417
-Ref: 3-2-3-Footnote-1595652
-Node: 3-2-4595900
-Ref: Figure 3-11596811
-Ref: Exercise 3-11601164
-Node: 3-3602612
-Node: 3-3-1604790
-Ref: Figure 3-12605322
-Ref: Figure 3-13606446
-Ref: Figure 3-14607596
-Ref: Figure 3-15608759
-Ref: Exercise 3-12612020
-Ref: Exercise 3-13613349
-Ref: Exercise 3-14613778
-Ref: Figure 3-16615472
-Ref: Figure 3-17615896
-Ref: Exercise 3-15618802
-Ref: Exercise 3-16618938
-Ref: Exercise 3-17619721
-Ref: Exercise 3-18620047
-Ref: Exercise 3-19620346
-Ref: Exercise 3-20622108
-Ref: 3-3-1-Footnote-1622484
-Ref: 3-3-1-Footnote-2622615
-Ref: 3-3-1-Footnote-3622917
-Ref: 3-3-1-Footnote-4623106
-Ref: 3-3-1-Footnote-5623471
-Ref: 3-3-1-Footnote-6624341
-Node: 3-3-2624592
-Ref: Figure 3-18625488
-Ref: Figure 3-19628495
-Ref: Figure 3-20630634
-Ref: Figure 3-21632126
-Ref: Exercise 3-21633233
-Ref: Exercise 3-22634543
-Ref: Exercise 3-23635187
-Ref: 3-3-2-Footnote-1635788
-Ref: 3-3-2-Footnote-2636093
-Node: 3-3-3636217
-Ref: Figure 3-22637535
-Ref: Figure 3-23640640
-Ref: Exercise 3-24646213
-Ref: Exercise 3-25646880
-Ref: Exercise 3-26647229
-Ref: Exercise 3-27647787
-Ref: 3-3-3-Footnote-1649789
-Ref: 3-3-3-Footnote-2649896
-Node: 3-3-4650234
-Ref: Figure 3-24652630
-Ref: Figure 3-25653606
-Ref: Figure 3-26656527
-Ref: Exercise 3-28660018
-Ref: Exercise 3-29660153
-Ref: Exercise 3-30660450
-Ref: Figure 3-27661415
-Ref: Exercise 3-31668906
-Ref: Exercise 3-32673581
-Ref: 3-3-4-Footnote-1674194
-Ref: 3-3-4-Footnote-2674579
-Ref: Footnote 27674599
-Ref: 3-3-4-Footnote-3675366
-Ref: 3-3-4-Footnote-4675578
-Ref: 3-3-4-Footnote-5675901
-Node: 3-3-5676141
-Ref: Figure 3-28678861
-Ref: Exercise 3-33694633
-Ref: Exercise 3-34694921
-Ref: Exercise 3-35695354
-Ref: Exercise 3-36696066
-Ref: Exercise 3-37696603
-Ref: 3-3-5-Footnote-1697548
-Ref: 3-3-5-Footnote-2698067
-Ref: 3-3-5-Footnote-3698176
-Node: 3-4700134
-Ref: 3-4-Footnote-1703605
-Node: 3-4-1703940
-Ref: Figure 3-29708702
-Ref: Figure 3-30711527
-Ref: Exercise 3-38714425
-Ref: 3-4-1-Footnote-1715364
-Ref: 3-4-1-Footnote-2715510
-Ref: 3-4-1-Footnote-3716318
-Ref: 3-4-1-Footnote-4716423
-Ref: 3-4-1-Footnote-5716709
-Ref: Footnote 39716729
-Node: 3-4-2717055
-Ref: Exercise 3-39723243
-Ref: Exercise 3-40723602
-Ref: Exercise 3-41724115
-Ref: Exercise 3-42725311
-Ref: Exercise 3-43730773
-Ref: Exercise 3-44731634
-Ref: Exercise 3-45732622
-Ref: Exercise 3-46737908
-Ref: Exercise 3-47738275
-Ref: Exercise 3-48740140
-Ref: Exercise 3-49740618
-Ref: 3-4-2-Footnote-1743726
-Ref: 3-4-2-Footnote-2744087
-Ref: 3-4-2-Footnote-3744249
-Ref: 3-4-2-Footnote-4744536
-Ref: 3-4-2-Footnote-5744663
-Ref: 3-4-2-Footnote-6745534
-Ref: 3-4-2-Footnote-7745814
-Ref: 3-4-2-Footnote-8746245
-Ref: 3-4-2-Footnote-9747377
-Ref: 3-4-2-Footnote-10747816
-Ref: 3-4-2-Footnote-11748413
-Ref: 3-4-2-Footnote-12748753
-Node: 3-5748974
-Ref: 3-5-Footnote-1752049
-Node: 3-5-1752393
-Ref: Exercise 3-50765791
-Ref: Exercise 3-51766314
-Ref: Exercise 3-52766807
-Ref: 3-5-1-Footnote-1767660
-Ref: 3-5-1-Footnote-2767771
-Ref: 3-5-1-Footnote-3767905
-Ref: 3-5-1-Footnote-4768374
-Ref: 3-5-1-Footnote-5768800
-Ref: 3-5-1-Footnote-6769102
-Ref: 3-5-1-Footnote-7769840
-Node: 3-5-2770622
-Ref: Figure 3-31774565
-Ref: Exercise 3-53779541
-Ref: Exercise 3-54779701
-Ref: Exercise 3-55780097
-Ref: Exercise 3-56780366
-Ref: Exercise 3-57782294
-Ref: Exercise 3-58782733
-Ref: Exercise 3-59783208
-Ref: Exercise 3-60785531
-Ref: Exercise 3-61785997
-Ref: Exercise 3-62786775
-Ref: 3-5-2-Footnote-1787328
-Ref: 3-5-2-Footnote-2787914
-Ref: 3-5-2-Footnote-3788266
-Ref: 3-5-2-Footnote-4788352
-Ref: 3-5-2-Footnote-5788950
-Node: 3-5-3789303
-Ref: Exercise 3-63796170
-Ref: Exercise 3-64796973
-Ref: Exercise 3-65797449
-Ref: Exercise 3-66802137
-Ref: Exercise 3-67802596
-Ref: Exercise 3-68802841
-Ref: Exercise 3-69803458
-Ref: Exercise 3-70803800
-Ref: Exercise 3-71805240
-Ref: Exercise 3-72805976
-Ref: Figure 3-32807605
-Ref: Exercise 3-73808274
-Ref: Figure 3-33809445
-Ref: Exercise 3-74810281
-Ref: Exercise 3-75812190
-Ref: Exercise 3-76813456
-Ref: 3-5-3-Footnote-1814139
-Ref: 3-5-3-Footnote-2814332
-Ref: 3-5-3-Footnote-3814436
-Ref: 3-5-3-Footnote-4814525
-Ref: 3-5-3-Footnote-5814965
-Ref: 3-5-3-Footnote-6815134
-Node: 3-5-4815769
-Ref: Figure 3-34817508
-Ref: Exercise 3-77820295
-Ref: Figure 3-35821315
-Ref: Exercise 3-78822184
-Ref: Exercise 3-79822954
-Ref: Exercise 3-80823151
-Ref: Figure 3-36824328
-Ref: Figure 3-37824766
-Ref: 3-5-4-Footnote-1828660
-Ref: 3-5-4-Footnote-2828962
-Node: 3-5-5830205
-Ref: Exercise 3-81833112
-Ref: Exercise 3-82833626
-Ref: Figure 3-38839983
-Ref: 3-5-5-Footnote-1841967
-Ref: 3-5-5-Footnote-2842197
-Ref: 3-5-5-Footnote-3842538
-Ref: 3-5-5-Footnote-4843069
-Node: Chapter 4843642
-Ref: Chapter 4-Footnote-1851710
-Ref: Chapter 4-Footnote-2853189
-Node: 4-1853514
-Ref: 4-1-Footnote-1856851
-Ref: 4-1-Footnote-2857273
-Node: 4-1-1858879
-Ref: Figure 4-1859019
-Ref: Exercise 4-1868118
-Ref: 4-1-1-Footnote-1868913
-Ref: 4-1-1-Footnote-2869406
-Ref: 4-1-1-Footnote-3869617
-Ref: 4-1-1-Footnote-4869843
-Node: 4-1-2870013
-Ref: Exercise 4-2877896
-Ref: Exercise 4-3879035
-Ref: Exercise 4-4879377
-Ref: Exercise 4-5880427
-Ref: Exercise 4-6880989
-Ref: Exercise 4-7881521
-Ref: Exercise 4-8882407
-Ref: Exercise 4-9883284
-Ref: Exercise 4-10883787
-Ref: 4-1-2-Footnote-1884154
-Ref: 4-1-2-Footnote-2884440
-Ref: 4-1-2-Footnote-3884763
-Ref: 4-1-2-Footnote-4885069
-Ref: 4-1-2-Footnote-5885238
-Node: 4-1-3885801
-Ref: Exercise 4-11893079
-Ref: Exercise 4-12893334
-Ref: Exercise 4-13893684
-Ref: 4-1-3-Footnote-1894260
-Ref: 4-1-3-Footnote-2894537
-Node: 4-1-4894941
-Ref: Exercise 4-14899988
-Ref: 4-1-4-Footnote-1900466
-Ref: 4-1-4-Footnote-2900931
-Ref: 4-1-4-Footnote-3901728
-Node: 4-1-5902105
-Ref: Figure 4-2903023
-Ref: Figure 4-3904610
-Ref: Exercise 4-15907238
-Ref: 4-1-5-Footnote-1908135
-Ref: 4-1-5-Footnote-2909764
-Ref: 4-1-5-Footnote-3910256
-Ref: 4-1-5-Footnote-4910875
-Ref: 4-1-5-Footnote-5911074
-Node: 4-1-6911462
-Ref: Exercise 4-16915321
-Ref: Exercise 4-17916073
-Ref: Exercise 4-18916728
-Ref: Exercise 4-19917612
-Ref: Exercise 4-20918981
-Ref: Exercise 4-21921509
-Ref: 4-1-6-Footnote-1923241
-Ref: 4-1-6-Footnote-2924005
-Ref: 4-1-6-Footnote-3924389
-Ref: 4-1-6-Footnote-4924848
-Node: 4-1-7925221
-Ref: Exercise 4-22933103
-Ref: Exercise 4-23933232
-Ref: Exercise 4-24934892
-Ref: 4-1-7-Footnote-1935210
-Ref: 4-1-7-Footnote-2935550
-Ref: 4-1-7-Footnote-3935911
-Node: 4-2935996
-Ref: 4-2-Footnote-1937497
-Node: 4-2-1937816
-Ref: Exercise 4-25940789
-Ref: Exercise 4-26941213
-Ref: 4-2-1-Footnote-1941956
-Ref: 4-2-1-Footnote-2942348
-Node: 4-2-2942776
-Ref: Exercise 4-27951267
-Ref: Exercise 4-28951889
-Ref: Exercise 4-29952135
-Ref: Exercise 4-30952747
-Ref: Exercise 4-31955664
-Ref: 4-2-2-Footnote-1957272
-Ref: 4-2-2-Footnote-2957612
-Ref: 4-2-2-Footnote-3957973
-Ref: 4-2-2-Footnote-4958673
-Ref: 4-2-2-Footnote-5959409
-Node: 4-2-3959607
-Ref: Exercise 4-32963502
-Ref: Exercise 4-33963738
-Ref: Exercise 4-34964271
-Ref: 4-2-3-Footnote-1964625
-Ref: 4-2-3-Footnote-2964719
-Ref: 4-2-3-Footnote-3965193
-Node: 4-3965364
-Ref: 4-3-Footnote-1969993
-Node: 4-3-1970682
-Ref: Exercise 4-35975869
-Ref: Exercise 4-36976500
-Ref: Exercise 4-37977094
-Ref: 4-3-1-Footnote-1977800
-Ref: 4-3-1-Footnote-2977925
-Ref: 4-3-1-Footnote-3978395
-Ref: 4-3-1-Footnote-4978960
-Ref: 4-3-1-Footnote-5979191
-Ref: Footnote 4-47979213
-Node: 4-3-2981515
-Ref: Exercise 4-38983852
-Ref: Exercise 4-39984059
-Ref: Exercise 4-40984400
-Ref: Exercise 4-41985210
-Ref: Exercise 4-42985310
-Ref: Exercise 4-43986171
-Ref: Exercise 4-44987060
-Ref: Exercise 4-45994191
-Ref: Exercise 4-46994470
-Ref: Exercise 4-47994795
-Ref: Exercise 4-48995413
-Ref: Exercise 4-49995655
-Ref: 4-3-2-Footnote-1996160
-Ref: 4-3-2-Footnote-2996564
-Ref: 4-3-2-Footnote-3996737
-Ref: 4-3-2-Footnote-4996877
-Ref: 4-3-2-Footnote-5997059
-Ref: 4-3-2-Footnote-6997173
-Ref: 4-3-2-Footnote-7997729
-Node: 4-3-3998130
-Ref: Exercise 4-501018381
-Ref: Exercise 4-511018634
-Ref: Exercise 4-521019432
-Ref: Exercise 4-531020349
-Ref: Exercise 4-541020746
-Ref: 4-3-3-Footnote-11021816
-Ref: 4-3-3-Footnote-21022184
-Ref: 4-3-3-Footnote-31022318
-Node: 4-41022456
-Ref: 4-4-Footnote-11029014
-Ref: 4-4-Footnote-21030983
-Ref: 4-4-Footnote-31031215
-Ref: 4-4-Footnote-41031670
-Node: 4-4-11032564
-Ref: Exercise 4-551040249
-Ref: Exercise 4-561043701
-Ref: Exercise 4-571046592
-Ref: Exercise 4-581047092
-Ref: Exercise 4-591047287
-Ref: Exercise 4-601048862
-Ref: Exercise 4-611052088
-Ref: Exercise 4-621052481
-Ref: Exercise 4-631052863
-Ref: 4-4-1-Footnote-11053775
-Ref: 4-4-1-Footnote-21053855
-Ref: 4-4-1-Footnote-31054060
-Ref: 4-4-1-Footnote-41054363
-Ref: 4-4-1-Footnote-51055069
-Node: 4-4-21055244
-Ref: Figure 4-41060001
-Ref: Figure 4-51062128
-Ref: Figure 4-61063177
-Ref: 4-4-2-Footnote-11074440
-Ref: 4-4-2-Footnote-21075178
-Ref: 4-4-2-Footnote-31075350
-Ref: 4-4-2-Footnote-41075484
-Ref: 4-4-2-Footnote-51075647
-Ref: 4-4-2-Footnote-61075807
-Ref: 4-4-2-Footnote-71076224
-Ref: 4-4-2-Footnote-81076511
-Node: 4-4-31076881
-Ref: Exercise 4-641084192
-Ref: Exercise 4-651084974
-Ref: Exercise 4-661085496
-Ref: Exercise 4-671086850
-Ref: Exercise 4-681087530
-Ref: Exercise 4-691087844
-Ref: 4-4-3-Footnote-11088656
-Ref: 4-4-3-Footnote-21089039
-Ref: 4-4-3-Footnote-31090079
-Ref: 4-4-3-Footnote-41091066
-Ref: 4-4-3-Footnote-51091465
-Node: 4-4-41091576
-Node: 4-4-4-11092224
-Node: 4-4-4-21095805
-Node: 4-4-4-31102085
-Node: 4-4-4-41108361
-Ref: 4-4-4-4-Footnote-11116077
-Node: 4-4-4-51117516
-Ref: Exercise 4-701122838
-Node: 4-4-4-61123374
-Node: 4-4-4-71125324
-Ref: 4-4-4-7-Footnote-11129811
-Node: 4-4-4-81130461
-Ref: Exercise 4-711131036
-Ref: Exercise 4-721131947
-Ref: Exercise 4-731132203
-Ref: Exercise 4-741132566
-Ref: Exercise 4-751133348
-Ref: Exercise 4-761135338
-Ref: Exercise 4-771136553
-Ref: Exercise 4-781137301
-Ref: Exercise 4-791137989
-Node: Chapter 51139620
-Node: 5-11144169
-Ref: Figure 5-11148205
-Ref: Figure 5-21150257
-Ref: Exercise 5-11150758
-Node: 5-1-11151464
-Ref: Figure 5-31153704
-Ref: Exercise 5-21158024
-Ref: Figure 5-41160159
-Ref: 5-1-1-Footnote-11161965
-Node: 5-1-21162143
-Ref: Figure 5-51163626
-Ref: Figure 5-61165264
-Ref: Exercise 5-31165848
-Node: 5-1-31166687
-Ref: Figure 5-71167558
-Ref: Figure 5-81171094
-Ref: Figure 5-91171788
-Ref: Figure 5-101172715
-Node: 5-1-41175717
-Ref: Figure 5-111185233
-Ref: Figure 5-121187875
-Ref: Exercise 5-41189572
-Ref: Exercise 5-51190244
-Ref: Exercise 5-61190491
-Ref: 5-1-4-Footnote-11190752
-Ref: 5-1-4-Footnote-21191069
-Node: 5-1-51191176
-Node: 5-21192494
-Ref: Exercise 5-71195523
-Node: 5-2-11195827
-Ref: Figure 5-131201010
-Node: 5-2-21204835
-Ref: Exercise 5-81210256
-Ref: 5-2-2-Footnote-11210916
-Node: 5-2-31212370
-Ref: Exercise 5-91224230
-Ref: Exercise 5-101224536
-Ref: Exercise 5-111224801
-Ref: Exercise 5-121226235
-Ref: Exercise 5-131227372
-Node: 5-2-41227753
-Ref: Exercise 5-141230258
-Ref: Exercise 5-151231210
-Ref: Exercise 5-161231548
-Ref: Exercise 5-171231849
-Ref: Exercise 5-181232284
-Ref: Exercise 5-191232791
-Node: 5-31234069
-Node: 5-3-11236352
-Ref: Figure 5-141240036
-Ref: Exercise 5-201246149
-Ref: Exercise 5-211246527
-Ref: Exercise 5-221247401
-Ref: 5-3-1-Footnote-11247815
-Ref: 5-3-1-Footnote-21248013
-Ref: 5-3-1-Footnote-31248219
-Ref: 5-3-1-Footnote-41248470
-Ref: 5-3-1-Footnote-51249366
-Ref: 5-3-1-Footnote-61249835
-Ref: 5-3-1-Footnote-71250013
-Ref: 5-3-1-Footnote-81250329
-Node: 5-3-21250562
-Ref: Figure 5-151255146
-Ref: 5-3-2-Footnote-11264355
-Ref: 5-3-2-Footnote-21265083
-Ref: 5-3-2-Footnote-31265266
-Ref: 5-3-2-Footnote-41266966
-Ref: 5-3-2-Footnote-51267164
-Ref: 5-3-2-Footnote-61267323
-Node: 5-41267818
-Ref: Figure 5-161270514
-Ref: 5-4-Footnote-11271857
-Node: 5-4-11271962
-Ref: 5-4-1-Footnote-11283533
-Ref: 5-4-1-Footnote-21284008
-Ref: 5-4-1-Footnote-31284638
-Ref: 5-4-1-Footnote-41285047
-Ref: 5-4-1-Footnote-51285570
-Node: 5-4-21285795
-Ref: 5-4-2-Footnote-11292180
-Ref: 5-4-2-Footnote-21292358
-Ref: 5-4-2-Footnote-31292770
-Node: 5-4-31292867
-Ref: Exercise 5-231296343
-Ref: Exercise 5-241296606
-Ref: Exercise 5-251296912
-Ref: 5-4-3-Footnote-11297084
-Node: 5-4-41297348
-Ref: Exercise 5-261303310
-Ref: Exercise 5-271304361
-Ref: Exercise 5-281305339
-Ref: Exercise 5-291305739
-Ref: Exercise 5-301306872
-Ref: 5-4-4-Footnote-11309117
-Ref: 5-4-4-Footnote-21309694
-Ref: 5-4-4-Footnote-31309828
-Ref: 5-4-4-Footnote-41310012
-Node: 5-51310342
-Ref: 5-5-Footnote-11319540
-Ref: 5-5-Footnote-21319883
-Node: 5-5-11320483
-Ref: Exercise 5-311329255
-Ref: Exercise 5-321329973
-Ref: 5-5-1-Footnote-11331010
-Node: 5-5-21331497
-Ref: 5-5-2-Footnote-11343888
-Ref: 5-5-2-Footnote-21344431
-Ref: 5-5-2-Footnote-31345261
-Ref: Footnote 381345281
-Node: 5-5-31345774
-Ref: 5-5-3-Footnote-11359741
-Ref: 5-5-3-Footnote-21359982
-Ref: 5-5-3-Footnote-31361183
-Node: 5-5-41361321
-Ref: 5-5-4-Footnote-11368641
-Node: 5-5-51368884
-Ref: Exercise 5-331375666
-Ref: Exercise 5-341376138
-Ref: Figure 5-171376685
-Ref: Exercise 5-351381308
-Ref: Figure 5-181381415
-Ref: Exercise 5-361384062
-Ref: Exercise 5-371384613
-Ref: Exercise 5-381385094
-Ref: 5-5-5-Footnote-11388949
-Ref: 5-5-5-Footnote-21389198
-Node: 5-5-61389553
-Ref: Exercise 5-391394292
-Ref: Exercise 5-401394853
-Ref: Exercise 5-411395108
-Ref: Exercise 5-421395760
-Ref: Exercise 5-431396786
-Ref: Exercise 5-441397409
-Ref: 5-5-6-Footnote-11398685
-Ref: 5-5-6-Footnote-21398797
-Ref: 5-5-6-Footnote-31399039
-Node: 5-5-71399480
-Ref: Exercise 5-451406558
-Ref: Exercise 5-461408687
-Ref: Exercise 5-471409349
-Ref: Exercise 5-481410758
-Ref: Exercise 5-491411445
-Ref: Exercise 5-501411953
-Ref: Exercise 5-511412401
-Ref: Exercise 5-521412748
-Ref: 5-5-7-Footnote-11413071
-Ref: 5-5-7-Footnote-21413338
-Ref: 5-5-7-Footnote-31413719
-Ref: 5-5-7-Footnote-41414378
-Ref: 5-5-7-Footnote-51414517
-Ref: 5-5-7-Footnote-61415891
-Ref: 5-5-7-Footnote-71416476
-Node: References1416871
-Node: Index1432991
+Ref: Exercise 2-2239031
+Ref: Exercise 2-3240135
+Node: 2-1-3240632
+Ref: Exercise 2-4245488
+Ref: Exercise 2-5245960
+Ref: Exercise 2-6246261
+Ref: 2-1-3-Footnote-1247139
+Node: 2-1-4248367
+Ref: Exercise 2-7251741
+Ref: Exercise 2-8252076
+Ref: Exercise 2-9252279
+Ref: Exercise 2-10252995
+Ref: Exercise 2-11253289
+Ref: Exercise 2-12254706
+Ref: Exercise 2-13255037
+Ref: Exercise 2-14256457
+Ref: Exercise 2-15256901
+Ref: Exercise 2-16257403
+Node: 2-2257685
+Ref: Figure 2-2258460
+Ref: Figure 2-3259138
+Ref: 2-2-Footnote-1261543
+Ref: 2-2-Footnote-2262050
+Node: 2-2-1263194
+Ref: Figure 2-4263328
+Ref: Exercise 2-17269116
+Ref: Exercise 2-18269324
+Ref: Exercise 2-19269533
+Ref: Exercise 2-20271408
+Ref: Exercise 2-21275271
+Ref: Exercise 2-22275799
+Ref: Exercise 2-23276817
+Ref: 2-2-1-Footnote-1277623
+Ref: 2-2-1-Footnote-2277829
+Ref: 2-2-1-Footnote-3278323
+Ref: 2-2-1-Footnote-4279121
+Ref: 2-2-1-Footnote-5279258
+Ref: Footnote 12279278
+Node: 2-2-2279802
+Ref: Figure 2-5280427
+Ref: Figure 2-6281727
+Ref: Exercise 2-24283696
+Ref: Exercise 2-25283960
+Ref: Exercise 2-26284157
+Ref: Exercise 2-27284479
+Ref: Exercise 2-28284949
+Ref: Exercise 2-29285331
+Ref: Exercise 2-30288703
+Ref: Exercise 2-31289169
+Ref: Exercise 2-32289401
+Ref: 2-2-2-Footnote-1290052
+Node: 2-2-3290181
+Ref: Figure 2-7293340
+Ref: Exercise 2-33300869
+Ref: Exercise 2-34301286
+Ref: Exercise 2-35302314
+Ref: Exercise 2-36302501
+Ref: Exercise 2-37303408
+Ref: Exercise 2-38304995
+Ref: Exercise 2-39305967
+Ref: Exercise 2-40310778
+Ref: Exercise 2-41311016
+Ref: Figure 2-8311208
+Ref: Exercise 2-42312016
+Ref: Exercise 2-43314846
+Ref: 2-2-3-Footnote-1315773
+Ref: 2-2-3-Footnote-2315969
+Ref: 2-2-3-Footnote-3316693
+Ref: 2-2-3-Footnote-4317640
+Ref: 2-2-3-Footnote-5317733
+Ref: 2-2-3-Footnote-6318084
+Ref: 2-2-3-Footnote-7318251
+Ref: 2-2-3-Footnote-8318319
+Node: 2-2-4318586
+Ref: Figure 2-9319450
+Ref: Figure 2-10321412
+Ref: Figure 2-11321628
+Ref: Figure 2-12322126
+Ref: Figure 2-13323973
+Ref: Figure 2-14325686
+Ref: Exercise 2-44326515
+Ref: Exercise 2-45328444
+Ref: Figure 2-15329746
+Ref: Exercise 2-46331632
+Ref: Exercise 2-47332340
+Ref: Exercise 2-48334317
+Ref: Exercise 2-49334772
+Ref: Exercise 2-50339383
+Ref: Exercise 2-51339581
+Ref: Exercise 2-52343308
+Ref: 2-2-4-Footnote-1344067
+Ref: 2-2-4-Footnote-2344368
+Ref: 2-2-4-Footnote-3347075
+Ref: 2-2-4-Footnote-4347203
+Ref: 2-2-4-Footnote-5347414
+Ref: 2-2-4-Footnote-6347721
+Ref: 2-2-4-Footnote-7347908
+Ref: 2-2-4-Footnote-8348717
+Ref: 2-2-4-Footnote-9348858
+Ref: 2-2-4-Footnote-10349014
+Node: 2-3349074
+Node: 2-3-1349614
+Ref: Exercise 2-53352844
+Ref: Exercise 2-54353238
+Ref: Exercise 2-55353911
+Ref: 2-3-1-Footnote-1354122
+Ref: 2-3-1-Footnote-2355076
+Ref: 2-3-1-Footnote-3355396
+Ref: 2-3-1-Footnote-4356299
+Ref: 2-3-1-Footnote-5356610
+Node: 2-3-2357089
+Ref: Exercise 2-56366281
+Ref: Exercise 2-57366907
+Ref: Exercise 2-58367401
+Node: 2-3-3368634
+Ref: Exercise 2-59372771
+Ref: Exercise 2-60372882
+Ref: Exercise 2-61377496
+Ref: Exercise 2-62377805
+Ref: Figure 2-16378681
+Ref: Figure 2-17383197
+Ref: Exercise 2-63383474
+Ref: Exercise 2-64384679
+Ref: Exercise 2-65386460
+Ref: Exercise 2-66389421
+Ref: 2-3-3-Footnote-1389632
+Ref: 2-3-3-Footnote-2390375
+Ref: 2-3-3-Footnote-3390624
+Ref: 2-3-3-Footnote-4390999
+Ref: 2-3-3-Footnote-5391190
+Node: 2-3-4391277
+Ref: Figure 2-18394859
+Ref: Exercise 2-67404910
+Ref: Exercise 2-68405419
+Ref: Exercise 2-69406232
+Ref: Exercise 2-70407213
+Ref: Exercise 2-71408145
+Ref: Exercise 2-72408483
+Ref: 2-3-4-Footnote-1409154
+Node: 2-4409245
+Ref: Figure 2-19413896
+Node: 2-4-1415148
+Ref: Figure 2-20416930
+Ref: 2-4-1-Footnote-1422420
+Ref: 2-4-1-Footnote-2422850
+Node: 2-4-2423097
+Ref: Figure 2-21429794
+Node: 2-4-3432126
+Ref: Figure 2-22436037
+Ref: Exercise 2-73442144
+Ref: Exercise 2-74444655
+Ref: Exercise 2-75449918
+Ref: Exercise 2-76450111
+Ref: 2-4-3-Footnote-1450724
+Ref: 2-4-3-Footnote-2450895
+Ref: 2-4-3-Footnote-3451046
+Ref: 2-4-3-Footnote-4451607
+Node: 2-5451706
+Ref: Figure 2-23453642
+Node: 2-5-1454797
+Ref: Figure 2-24462146
+Ref: Exercise 2-77462985
+Ref: Exercise 2-78464123
+Ref: Exercise 2-79465069
+Ref: Exercise 2-80465329
+Node: 2-5-2465572
+Ref: Figure 2-25474478
+Ref: Figure 2-26477188
+Ref: Exercise 2-81479490
+Ref: Exercise 2-82481287
+Ref: Exercise 2-83481844
+Ref: Exercise 2-84482251
+Ref: Exercise 2-85482734
+Ref: Exercise 2-86484226
+Ref: 2-5-2-Footnote-1484715
+Ref: 2-5-2-Footnote-2484823
+Ref: 2-5-2-Footnote-3484878
+Ref: 2-5-2-Footnote-4485510
+Ref: 2-5-2-Footnote-5486780
+Node: 2-5-3486913
+Ref: Exercise 2-87501082
+Ref: Exercise 2-88501289
+Ref: Exercise 2-89501463
+Ref: Exercise 2-90501612
+Ref: Exercise 2-91502224
+Ref: Exercise 2-92507110
+Ref: Exercise 2-93508231
+Ref: Exercise 2-94509832
+Ref: Exercise 2-95510546
+Ref: Exercise 2-96512570
+Ref: Exercise 2-97514606
+Ref: 2-5-3-Footnote-1517221
+Ref: 2-5-3-Footnote-2517498
+Ref: 2-5-3-Footnote-3518061
+Ref: 2-5-3-Footnote-4518390
+Ref: 2-5-3-Footnote-5518794
+Ref: 2-5-3-Footnote-6519114
+Ref: 2-5-3-Footnote-7519652
+Ref: 2-5-3-Footnote-8520454
+Ref: 2-5-3-Footnote-9520744
+Node: Chapter 3521080
+Node: 3-1524677
+Node: 3-1-1527064
+Ref: Exercise 3-1535454
+Ref: Exercise 3-2536002
+Ref: Exercise 3-3536999
+Ref: Exercise 3-4537588
+Ref: 3-1-1-Footnote-1537893
+Ref: 3-1-1-Footnote-2538308
+Ref: 3-1-1-Footnote-3538777
+Ref: 3-1-1-Footnote-4539050
+Ref: 3-1-1-Footnote-5539471
+Node: 3-1-2539766
+Ref: Exercise 3-5546550
+Ref: Exercise 3-6548809
+Ref: 3-1-2-Footnote-1549462
+Ref: 3-1-2-Footnote-2550488
+Ref: 3-1-2-Footnote-3550594
+Node: 3-1-3550823
+Ref: Exercise 3-7561966
+Ref: Exercise 3-8563039
+Ref: 3-1-3-Footnote-1563756
+Ref: 3-1-3-Footnote-2563982
+Ref: 3-1-3-Footnote-3564795
+Node: 3-2565455
+Ref: Figure 3-1567116
+Node: 3-2-1569878
+Ref: Figure 3-2571945
+Ref: Figure 3-3573948
+Ref: 3-2-1-Footnote-1576752
+Ref: 3-2-1-Footnote-2577430
+Node: 3-2-2577844
+Ref: Figure 3-4578646
+Ref: Figure 3-5580105
+Ref: Exercise 3-9583237
+Ref: 3-2-2-Footnote-1584021
+Node: 3-2-3584335
+Ref: Figure 3-6585404
+Ref: Figure 3-7587143
+Ref: Figure 3-8589340
+Ref: Figure 3-9591516
+Ref: Figure 3-10593316
+Ref: Exercise 3-10594545
+Ref: 3-2-3-Footnote-1595780
+Node: 3-2-4596028
+Ref: Figure 3-11596939
+Ref: Exercise 3-11601292
+Node: 3-3602740
+Node: 3-3-1604918
+Ref: Figure 3-12605450
+Ref: Figure 3-13606574
+Ref: Figure 3-14607724
+Ref: Figure 3-15608887
+Ref: Exercise 3-12612148
+Ref: Exercise 3-13613477
+Ref: Exercise 3-14613906
+Ref: Figure 3-16615600
+Ref: Figure 3-17616024
+Ref: Exercise 3-15618930
+Ref: Exercise 3-16619066
+Ref: Exercise 3-17619849
+Ref: Exercise 3-18620175
+Ref: Exercise 3-19620474
+Ref: Exercise 3-20622236
+Ref: 3-3-1-Footnote-1622612
+Ref: 3-3-1-Footnote-2622743
+Ref: 3-3-1-Footnote-3623045
+Ref: 3-3-1-Footnote-4623234
+Ref: 3-3-1-Footnote-5623599
+Ref: 3-3-1-Footnote-6624469
+Node: 3-3-2624720
+Ref: Figure 3-18625616
+Ref: Figure 3-19628623
+Ref: Figure 3-20630762
+Ref: Figure 3-21632254
+Ref: Exercise 3-21633361
+Ref: Exercise 3-22634671
+Ref: Exercise 3-23635315
+Ref: 3-3-2-Footnote-1635916
+Ref: 3-3-2-Footnote-2636221
+Node: 3-3-3636345
+Ref: Figure 3-22637663
+Ref: Figure 3-23640768
+Ref: Exercise 3-24646341
+Ref: Exercise 3-25647008
+Ref: Exercise 3-26647357
+Ref: Exercise 3-27647915
+Ref: 3-3-3-Footnote-1649917
+Ref: 3-3-3-Footnote-2650024
+Node: 3-3-4650362
+Ref: Figure 3-24652758
+Ref: Figure 3-25653734
+Ref: Figure 3-26656655
+Ref: Exercise 3-28660146
+Ref: Exercise 3-29660281
+Ref: Exercise 3-30660578
+Ref: Figure 3-27661543
+Ref: Exercise 3-31669034
+Ref: Exercise 3-32673709
+Ref: 3-3-4-Footnote-1674322
+Ref: 3-3-4-Footnote-2674707
+Ref: Footnote 27674727
+Ref: 3-3-4-Footnote-3675494
+Ref: 3-3-4-Footnote-4675706
+Ref: 3-3-4-Footnote-5676029
+Node: 3-3-5676269
+Ref: Figure 3-28678989
+Ref: Exercise 3-33694761
+Ref: Exercise 3-34695049
+Ref: Exercise 3-35695482
+Ref: Exercise 3-36696194
+Ref: Exercise 3-37696731
+Ref: 3-3-5-Footnote-1697676
+Ref: 3-3-5-Footnote-2698195
+Ref: 3-3-5-Footnote-3698304
+Node: 3-4700262
+Ref: 3-4-Footnote-1703733
+Node: 3-4-1704068
+Ref: Figure 3-29708830
+Ref: Figure 3-30711655
+Ref: Exercise 3-38714553
+Ref: 3-4-1-Footnote-1715492
+Ref: 3-4-1-Footnote-2715638
+Ref: 3-4-1-Footnote-3716446
+Ref: 3-4-1-Footnote-4716551
+Ref: 3-4-1-Footnote-5716837
+Ref: Footnote 39716857
+Node: 3-4-2717183
+Ref: Exercise 3-39723371
+Ref: Exercise 3-40723730
+Ref: Exercise 3-41724243
+Ref: Exercise 3-42725439
+Ref: Exercise 3-43730901
+Ref: Exercise 3-44731762
+Ref: Exercise 3-45732750
+Ref: Exercise 3-46738036
+Ref: Exercise 3-47738403
+Ref: Exercise 3-48740268
+Ref: Exercise 3-49740746
+Ref: 3-4-2-Footnote-1743854
+Ref: 3-4-2-Footnote-2744215
+Ref: 3-4-2-Footnote-3744377
+Ref: 3-4-2-Footnote-4744664
+Ref: 3-4-2-Footnote-5744791
+Ref: 3-4-2-Footnote-6745662
+Ref: 3-4-2-Footnote-7745942
+Ref: 3-4-2-Footnote-8746373
+Ref: 3-4-2-Footnote-9747505
+Ref: 3-4-2-Footnote-10747944
+Ref: 3-4-2-Footnote-11748541
+Ref: 3-4-2-Footnote-12748881
+Node: 3-5749102
+Ref: 3-5-Footnote-1752177
+Node: 3-5-1752521
+Ref: Exercise 3-50765919
+Ref: Exercise 3-51766442
+Ref: Exercise 3-52766935
+Ref: 3-5-1-Footnote-1767788
+Ref: 3-5-1-Footnote-2767899
+Ref: 3-5-1-Footnote-3768033
+Ref: 3-5-1-Footnote-4768502
+Ref: 3-5-1-Footnote-5768928
+Ref: 3-5-1-Footnote-6769230
+Ref: 3-5-1-Footnote-7769968
+Node: 3-5-2770750
+Ref: Figure 3-31774693
+Ref: Exercise 3-53779669
+Ref: Exercise 3-54779829
+Ref: Exercise 3-55780225
+Ref: Exercise 3-56780494
+Ref: Exercise 3-57782422
+Ref: Exercise 3-58782861
+Ref: Exercise 3-59783336
+Ref: Exercise 3-60785659
+Ref: Exercise 3-61786125
+Ref: Exercise 3-62786903
+Ref: 3-5-2-Footnote-1787456
+Ref: 3-5-2-Footnote-2788042
+Ref: 3-5-2-Footnote-3788394
+Ref: 3-5-2-Footnote-4788480
+Ref: 3-5-2-Footnote-5789078
+Node: 3-5-3789431
+Ref: Exercise 3-63796298
+Ref: Exercise 3-64797101
+Ref: Exercise 3-65797577
+Ref: Exercise 3-66802265
+Ref: Exercise 3-67802724
+Ref: Exercise 3-68802969
+Ref: Exercise 3-69803586
+Ref: Exercise 3-70803928
+Ref: Exercise 3-71805368
+Ref: Exercise 3-72806104
+Ref: Figure 3-32807733
+Ref: Exercise 3-73808402
+Ref: Figure 3-33809573
+Ref: Exercise 3-74810409
+Ref: Exercise 3-75812318
+Ref: Exercise 3-76813584
+Ref: 3-5-3-Footnote-1814267
+Ref: 3-5-3-Footnote-2814460
+Ref: 3-5-3-Footnote-3814564
+Ref: 3-5-3-Footnote-4814653
+Ref: 3-5-3-Footnote-5815093
+Ref: 3-5-3-Footnote-6815262
+Node: 3-5-4815897
+Ref: Figure 3-34817636
+Ref: Exercise 3-77820423
+Ref: Figure 3-35821443
+Ref: Exercise 3-78822312
+Ref: Exercise 3-79823082
+Ref: Exercise 3-80823279
+Ref: Figure 3-36824456
+Ref: Figure 3-37824894
+Ref: 3-5-4-Footnote-1828788
+Ref: 3-5-4-Footnote-2829090
+Node: 3-5-5830333
+Ref: Exercise 3-81833240
+Ref: Exercise 3-82833754
+Ref: Figure 3-38840111
+Ref: 3-5-5-Footnote-1842095
+Ref: 3-5-5-Footnote-2842325
+Ref: 3-5-5-Footnote-3842666
+Ref: 3-5-5-Footnote-4843197
+Node: Chapter 4843770
+Ref: Chapter 4-Footnote-1851838
+Ref: Chapter 4-Footnote-2853317
+Node: 4-1853642
+Ref: 4-1-Footnote-1856979
+Ref: 4-1-Footnote-2857401
+Node: 4-1-1859007
+Ref: Figure 4-1859147
+Ref: Exercise 4-1868246
+Ref: 4-1-1-Footnote-1869041
+Ref: 4-1-1-Footnote-2869534
+Ref: 4-1-1-Footnote-3869745
+Ref: 4-1-1-Footnote-4869971
+Node: 4-1-2870141
+Ref: Exercise 4-2878024
+Ref: Exercise 4-3879163
+Ref: Exercise 4-4879505
+Ref: Exercise 4-5880555
+Ref: Exercise 4-6881117
+Ref: Exercise 4-7881649
+Ref: Exercise 4-8882535
+Ref: Exercise 4-9883412
+Ref: Exercise 4-10883915
+Ref: 4-1-2-Footnote-1884282
+Ref: 4-1-2-Footnote-2884568
+Ref: 4-1-2-Footnote-3884891
+Ref: 4-1-2-Footnote-4885197
+Ref: 4-1-2-Footnote-5885366
+Node: 4-1-3885929
+Ref: Exercise 4-11893207
+Ref: Exercise 4-12893462
+Ref: Exercise 4-13893812
+Ref: 4-1-3-Footnote-1894388
+Ref: 4-1-3-Footnote-2894665
+Node: 4-1-4895069
+Ref: Exercise 4-14900116
+Ref: 4-1-4-Footnote-1900594
+Ref: 4-1-4-Footnote-2901059
+Ref: 4-1-4-Footnote-3901856
+Node: 4-1-5902233
+Ref: Figure 4-2903151
+Ref: Figure 4-3904738
+Ref: Exercise 4-15907366
+Ref: 4-1-5-Footnote-1908263
+Ref: 4-1-5-Footnote-2909892
+Ref: 4-1-5-Footnote-3910384
+Ref: 4-1-5-Footnote-4911003
+Ref: 4-1-5-Footnote-5911202
+Node: 4-1-6911590
+Ref: Exercise 4-16915449
+Ref: Exercise 4-17916201
+Ref: Exercise 4-18916856
+Ref: Exercise 4-19917740
+Ref: Exercise 4-20919109
+Ref: Exercise 4-21921637
+Ref: 4-1-6-Footnote-1923369
+Ref: 4-1-6-Footnote-2924133
+Ref: 4-1-6-Footnote-3924517
+Ref: 4-1-6-Footnote-4924976
+Node: 4-1-7925349
+Ref: Exercise 4-22933231
+Ref: Exercise 4-23933360
+Ref: Exercise 4-24935020
+Ref: 4-1-7-Footnote-1935338
+Ref: 4-1-7-Footnote-2935678
+Ref: 4-1-7-Footnote-3936039
+Node: 4-2936124
+Ref: 4-2-Footnote-1937625
+Node: 4-2-1937944
+Ref: Exercise 4-25940917
+Ref: Exercise 4-26941341
+Ref: 4-2-1-Footnote-1942084
+Ref: 4-2-1-Footnote-2942476
+Node: 4-2-2942904
+Ref: Exercise 4-27951395
+Ref: Exercise 4-28952017
+Ref: Exercise 4-29952263
+Ref: Exercise 4-30952875
+Ref: Exercise 4-31955792
+Ref: 4-2-2-Footnote-1957400
+Ref: 4-2-2-Footnote-2957740
+Ref: 4-2-2-Footnote-3958101
+Ref: 4-2-2-Footnote-4958801
+Ref: 4-2-2-Footnote-5959537
+Node: 4-2-3959735
+Ref: Exercise 4-32963630
+Ref: Exercise 4-33963866
+Ref: Exercise 4-34964399
+Ref: 4-2-3-Footnote-1964753
+Ref: 4-2-3-Footnote-2964847
+Ref: 4-2-3-Footnote-3965321
+Node: 4-3965492
+Ref: 4-3-Footnote-1970121
+Node: 4-3-1970810
+Ref: Exercise 4-35975997
+Ref: Exercise 4-36976628
+Ref: Exercise 4-37977222
+Ref: 4-3-1-Footnote-1977928
+Ref: 4-3-1-Footnote-2978053
+Ref: 4-3-1-Footnote-3978523
+Ref: 4-3-1-Footnote-4979088
+Ref: 4-3-1-Footnote-5979319
+Ref: Footnote 4-47979341
+Node: 4-3-2981643
+Ref: Exercise 4-38983980
+Ref: Exercise 4-39984187
+Ref: Exercise 4-40984528
+Ref: Exercise 4-41985338
+Ref: Exercise 4-42985438
+Ref: Exercise 4-43986299
+Ref: Exercise 4-44987188
+Ref: Exercise 4-45994319
+Ref: Exercise 4-46994598
+Ref: Exercise 4-47994923
+Ref: Exercise 4-48995541
+Ref: Exercise 4-49995783
+Ref: 4-3-2-Footnote-1996288
+Ref: 4-3-2-Footnote-2996692
+Ref: 4-3-2-Footnote-3996865
+Ref: 4-3-2-Footnote-4997005
+Ref: 4-3-2-Footnote-5997187
+Ref: 4-3-2-Footnote-6997301
+Ref: 4-3-2-Footnote-7997857
+Node: 4-3-3998258
+Ref: Exercise 4-501018509
+Ref: Exercise 4-511018762
+Ref: Exercise 4-521019560
+Ref: Exercise 4-531020477
+Ref: Exercise 4-541020874
+Ref: 4-3-3-Footnote-11021944
+Ref: 4-3-3-Footnote-21022312
+Ref: 4-3-3-Footnote-31022446
+Node: 4-41022584
+Ref: 4-4-Footnote-11029142
+Ref: 4-4-Footnote-21031111
+Ref: 4-4-Footnote-31031343
+Ref: 4-4-Footnote-41031798
+Node: 4-4-11032692
+Ref: Exercise 4-551040377
+Ref: Exercise 4-561043829
+Ref: Exercise 4-571046720
+Ref: Exercise 4-581047220
+Ref: Exercise 4-591047415
+Ref: Exercise 4-601048990
+Ref: Exercise 4-611052216
+Ref: Exercise 4-621052609
+Ref: Exercise 4-631052991
+Ref: 4-4-1-Footnote-11053903
+Ref: 4-4-1-Footnote-21053983
+Ref: 4-4-1-Footnote-31054188
+Ref: 4-4-1-Footnote-41054491
+Ref: 4-4-1-Footnote-51055197
+Node: 4-4-21055372
+Ref: Figure 4-41060129
+Ref: Figure 4-51062256
+Ref: Figure 4-61063305
+Ref: 4-4-2-Footnote-11074568
+Ref: 4-4-2-Footnote-21075306
+Ref: 4-4-2-Footnote-31075478
+Ref: 4-4-2-Footnote-41075612
+Ref: 4-4-2-Footnote-51075775
+Ref: 4-4-2-Footnote-61075935
+Ref: 4-4-2-Footnote-71076352
+Ref: 4-4-2-Footnote-81076639
+Node: 4-4-31077009
+Ref: Exercise 4-641084320
+Ref: Exercise 4-651085102
+Ref: Exercise 4-661085624
+Ref: Exercise 4-671086978
+Ref: Exercise 4-681087658
+Ref: Exercise 4-691087972
+Ref: 4-4-3-Footnote-11088784
+Ref: 4-4-3-Footnote-21089167
+Ref: 4-4-3-Footnote-31090207
+Ref: 4-4-3-Footnote-41091194
+Ref: 4-4-3-Footnote-51091593
+Node: 4-4-41091704
+Node: 4-4-4-11092352
+Node: 4-4-4-21095933
+Node: 4-4-4-31102213
+Node: 4-4-4-41108489
+Ref: 4-4-4-4-Footnote-11116205
+Node: 4-4-4-51117644
+Ref: Exercise 4-701122966
+Node: 4-4-4-61123502
+Node: 4-4-4-71125452
+Ref: 4-4-4-7-Footnote-11129939
+Node: 4-4-4-81130589
+Ref: Exercise 4-711131164
+Ref: Exercise 4-721132075
+Ref: Exercise 4-731132331
+Ref: Exercise 4-741132694
+Ref: Exercise 4-751133476
+Ref: Exercise 4-761135466
+Ref: Exercise 4-771136681
+Ref: Exercise 4-781137429
+Ref: Exercise 4-791138117
+Node: Chapter 51139748
+Node: 5-11144297
+Ref: Figure 5-11148333
+Ref: Figure 5-21150385
+Ref: Exercise 5-11150886
+Node: 5-1-11151592
+Ref: Figure 5-31153832
+Ref: Exercise 5-21158152
+Ref: Figure 5-41160287
+Ref: 5-1-1-Footnote-11162093
+Node: 5-1-21162271
+Ref: Figure 5-51163754
+Ref: Figure 5-61165392
+Ref: Exercise 5-31165976
+Node: 5-1-31166815
+Ref: Figure 5-71167686
+Ref: Figure 5-81171222
+Ref: Figure 5-91171916
+Ref: Figure 5-101172843
+Node: 5-1-41175845
+Ref: Figure 5-111185361
+Ref: Figure 5-121188003
+Ref: Exercise 5-41189700
+Ref: Exercise 5-51190372
+Ref: Exercise 5-61190619
+Ref: 5-1-4-Footnote-11190880
+Ref: 5-1-4-Footnote-21191197
+Node: 5-1-51191304
+Node: 5-21192622
+Ref: Exercise 5-71195651
+Node: 5-2-11195955
+Ref: Figure 5-131201138
+Node: 5-2-21204963
+Ref: Exercise 5-81210384
+Ref: 5-2-2-Footnote-11211044
+Node: 5-2-31212498
+Ref: Exercise 5-91224358
+Ref: Exercise 5-101224664
+Ref: Exercise 5-111224929
+Ref: Exercise 5-121226363
+Ref: Exercise 5-131227500
+Node: 5-2-41227881
+Ref: Exercise 5-141230386
+Ref: Exercise 5-151231338
+Ref: Exercise 5-161231676
+Ref: Exercise 5-171231977
+Ref: Exercise 5-181232412
+Ref: Exercise 5-191232919
+Node: 5-31234197
+Node: 5-3-11236480
+Ref: Figure 5-141240164
+Ref: Exercise 5-201246277
+Ref: Exercise 5-211246655
+Ref: Exercise 5-221247529
+Ref: 5-3-1-Footnote-11247943
+Ref: 5-3-1-Footnote-21248141
+Ref: 5-3-1-Footnote-31248347
+Ref: 5-3-1-Footnote-41248598
+Ref: 5-3-1-Footnote-51249494
+Ref: 5-3-1-Footnote-61249963
+Ref: 5-3-1-Footnote-71250141
+Ref: 5-3-1-Footnote-81250457
+Node: 5-3-21250690
+Ref: Figure 5-151255274
+Ref: 5-3-2-Footnote-11264483
+Ref: 5-3-2-Footnote-21265211
+Ref: 5-3-2-Footnote-31265394
+Ref: 5-3-2-Footnote-41267094
+Ref: 5-3-2-Footnote-51267292
+Ref: 5-3-2-Footnote-61267451
+Node: 5-41267946
+Ref: Figure 5-161270642
+Ref: 5-4-Footnote-11271985
+Node: 5-4-11272090
+Ref: 5-4-1-Footnote-11283661
+Ref: 5-4-1-Footnote-21284136
+Ref: 5-4-1-Footnote-31284766
+Ref: 5-4-1-Footnote-41285175
+Ref: 5-4-1-Footnote-51285698
+Node: 5-4-21285923
+Ref: 5-4-2-Footnote-11292308
+Ref: 5-4-2-Footnote-21292486
+Ref: 5-4-2-Footnote-31292898
+Node: 5-4-31292995
+Ref: Exercise 5-231296471
+Ref: Exercise 5-241296734
+Ref: Exercise 5-251297040
+Ref: 5-4-3-Footnote-11297212
+Node: 5-4-41297476
+Ref: Exercise 5-261303438
+Ref: Exercise 5-271304489
+Ref: Exercise 5-281305467
+Ref: Exercise 5-291305867
+Ref: Exercise 5-301307000
+Ref: 5-4-4-Footnote-11309245
+Ref: 5-4-4-Footnote-21309822
+Ref: 5-4-4-Footnote-31309956
+Ref: 5-4-4-Footnote-41310140
+Node: 5-51310470
+Ref: 5-5-Footnote-11319668
+Ref: 5-5-Footnote-21320011
+Node: 5-5-11320611
+Ref: Exercise 5-311329383
+Ref: Exercise 5-321330101
+Ref: 5-5-1-Footnote-11331138
+Node: 5-5-21331625
+Ref: 5-5-2-Footnote-11344016
+Ref: 5-5-2-Footnote-21344559
+Ref: 5-5-2-Footnote-31345389
+Ref: Footnote 381345409
+Node: 5-5-31345902
+Ref: 5-5-3-Footnote-11359869
+Ref: 5-5-3-Footnote-21360110
+Ref: 5-5-3-Footnote-31361311
+Node: 5-5-41361449
+Ref: 5-5-4-Footnote-11368769
+Node: 5-5-51369012
+Ref: Exercise 5-331375794
+Ref: Exercise 5-341376266
+Ref: Figure 5-171376813
+Ref: Exercise 5-351381436
+Ref: Figure 5-181381543
+Ref: Exercise 5-361384190
+Ref: Exercise 5-371384741
+Ref: Exercise 5-381385222
+Ref: 5-5-5-Footnote-11389077
+Ref: 5-5-5-Footnote-21389326
+Node: 5-5-61389681
+Ref: Exercise 5-391394420
+Ref: Exercise 5-401394981
+Ref: Exercise 5-411395236
+Ref: Exercise 5-421395888
+Ref: Exercise 5-431396914
+Ref: Exercise 5-441397537
+Ref: 5-5-6-Footnote-11398813
+Ref: 5-5-6-Footnote-21398925
+Ref: 5-5-6-Footnote-31399167
+Node: 5-5-71399608
+Ref: Exercise 5-451406686
+Ref: Exercise 5-461408815
+Ref: Exercise 5-471409477
+Ref: Exercise 5-481410886
+Ref: Exercise 5-491411573
+Ref: Exercise 5-501412081
+Ref: Exercise 5-511412529
+Ref: Exercise 5-521412876
+Ref: 5-5-7-Footnote-11413199
+Ref: 5-5-7-Footnote-21413466
+Ref: 5-5-7-Footnote-31413847
+Ref: 5-5-7-Footnote-41414506
+Ref: 5-5-7-Footnote-51414645
+Ref: 5-5-7-Footnote-61416019
+Ref: 5-5-7-Footnote-71416604
+Node: References1416999
+Node: Index1433119
 
 End Tag Table
