@@ -8382,9 +8382,9 @@ form that may be simplest for one purpose may not be for another.
      handle more kinds of expressions.  For instance, implement the
      differentiation rule
 
-          n_1   n_2
-          --- = ---  if and only if n_1 d_2 = n_2 d_1
-          d_1   d_2
+          d(u^n)             / du \
+          ------ = n u^(n-1) | -- |
+            dx               \ dx /
 
      by adding a new clause to the `deriv' program and defining
      appropriate procedures `exponentiation?', `base', `exponent', and
